@@ -27,15 +27,15 @@ async function objectData(address: any[]): Promise<any[]> {
     for (let i = 0; i <= address.length - 1; i++) {
         const response = await viaCepRequest(address[i].cep);
         resultAdressList.push({
-            cep: response.cep,
-            logradouro: response.logradouro,
-            complemento: response.complemento,
-            bairro: response.bairro,
-            localidade: response.localidade,
-            uf: response.uf,
-            unidade: response.unidade,
-            ibge: response.ibge,
-            gia: response.gia,
+            cep: response.cep || '',
+            logradouro: response.logradouro || '',
+            complemento: response.complemento || '',
+            bairro: response.bairro || '',
+            localidade: response.localidade || '',
+            uf: response.uf || '',
+            unidade: response.unidade || '',
+            ibge: response.ibge || '',
+            gia: response.gia || '',
         });
     }
     return resultAdressList;
